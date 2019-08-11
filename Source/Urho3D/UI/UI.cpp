@@ -781,7 +781,7 @@ UIElement* UI::GetElementAt(const IntVector2& position, bool enabledOnly, IntVec
     if (HasModalElement())
         result = GetElementAt(rootModalElement_, position, enabledOnly);
 
-    if (!result)
+    else
         result = GetElementAt(rootElement_, position, enabledOnly);
 
     // Mouse was not hovering UI element. Check elements rendered on 3D objects.
