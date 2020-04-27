@@ -78,8 +78,13 @@ bool Model::BeginLoad(Deserializer& source)
     String fileID = source.ReadFileID();
     if (fileID != "UMDL" && fileID != "UMD2")
     {
-        URHO3D_LOGERROR(source.GetName() + " is not a valid model file");
-        return false;
+        source.Seek(11);
+        fileID = source.ReadFileID();
+        if (fileID != "UMDL" && fileID != "UMD2")
+        {
+            URHO3D_LOGERROR(source.GetName() + " is not a valid model file");
+            return false;
+        }
     }
 
     bool hasVertexDeclarations = (fileID == "UMD2");

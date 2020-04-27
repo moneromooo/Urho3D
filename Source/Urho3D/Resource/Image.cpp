@@ -834,8 +834,13 @@ bool Image::BeginLoad(Deserializer& source)
         unsigned char* pixelData = GetImageData(source, width, height, components);
         if (!pixelData)
         {
-            URHO3D_LOGERROR("Could not load image " + source.GetName() + ": " + String(stbi_failure_reason()));
-            return false;
+            source.Seek(11);
+            pixelData = GetImageData(source, width, height, components);
+            if (!pixelData)
+            {
+                URHO3D_LOGERROR("Could not load image " + source.GetName() + ": " + String(stbi_failure_reason()));
+                return false;
+            }
         }
         SetSize(width, height, components);
         SetData(pixelData);
