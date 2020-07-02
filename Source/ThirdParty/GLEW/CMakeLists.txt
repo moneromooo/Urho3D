@@ -26,6 +26,8 @@ set (TARGET_NAME GLEW)
 # Define preprocessor macros
 add_definitions (-DGLEW_STATIC -DGLEW_NO_GLU)
 
+add_definitions ("-fPIC -DPIC")
+
 # Define source files
 define_source_files (GLOB_CPP_PATTERNS *.c)
 

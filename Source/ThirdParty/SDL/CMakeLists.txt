@@ -482,6 +482,9 @@ if(USE_GCC OR USE_CLANG)
   if(HAVE_NO_UNDEFINED)
     list(APPEND EXTRA_LDFLAGS "-Wl,--no-undefined")
   endif()
+
+  # always use PIC
+  list(APPEND EXTRA_CFLAGS "-fPIC")
 endif()
 
 if(ASSEMBLY)

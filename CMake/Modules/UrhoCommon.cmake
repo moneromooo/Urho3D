@@ -562,6 +562,7 @@ else ()
     set (CMAKE_CXX_VISIBILITY_PRESET hidden)
     set (CMAKE_VISIBILITY_INLINES_HIDDEN true)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-invalid-offsetof")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -DPIC")
     if (NOT ANDROID)    # Most of the flags are already setup in Android toolchain file
         if (ARM AND CMAKE_SYSTEM_NAME STREQUAL Linux)
             # Common compiler flags for aarch64-linux-gnu and arm-linux-gnueabihf, we do not support ARM on Windows for now

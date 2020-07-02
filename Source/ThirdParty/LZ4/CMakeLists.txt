@@ -26,6 +26,8 @@ set (TARGET_NAME LZ4)
 # Define source files
 define_source_files (GLOB_CPP_PATTERNS *.c)
 
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -DPIC")
+
 # Setup target
 setup_library ()
 
