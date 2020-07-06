@@ -182,8 +182,8 @@ public:
     /// Move-assign a string.
     String& operator =(String && rhs) noexcept
     {
-        assert(&rhs != this);
-        Swap(rhs);
+        if (&rhs != this)
+            Swap(rhs);
         return *this;
     }
 
