@@ -26,6 +26,10 @@
 #include "../Math/Vector2.h"
 #include "../Math/MathDefs.h"
 
+#if !defined __GNUC__ || !defined __x86_64__ || defined __llvm__
+static inline float __builtin_ia32_rsqrtf(float x) { return 1.0f / sqrtf(x); }
+#endif
+
 namespace Urho3D
 {
 
