@@ -68,11 +68,11 @@ static const AudioBootStrap *const bootstrap[] = {
 #if SDL_AUDIO_DRIVER_NAS
     &NAS_bootstrap,
 #endif
-#if SDL_AUDIO_DRIVER_WASAPI
-    &WASAPI_bootstrap,
-#endif
 #if SDL_AUDIO_DRIVER_DSOUND
     &DSOUND_bootstrap,
+#endif
+#if SDL_AUDIO_DRIVER_WASAPI
+    &WASAPI_bootstrap,
 #endif
 #if SDL_AUDIO_DRIVER_WINMM
     &WINMM_bootstrap,
